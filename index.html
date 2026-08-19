@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atelier — Furniture Search</title>
+    <meta
+      name="description"
+      content="InstantSearch.js furniture demo with a multi-level color hierarchy facet."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="topbar__inner">
+          <a class="brand" href="/">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span class="brand__name">Atelier</span>
+            <span class="brand__sub">Furniture</span>
+          </a>
+          <div id="searchbox" class="topbar__search"></div>
+          <button
+            id="filters-toggle"
+            class="filters-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="filters"
+          >
+            Filters
+          </button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside id="filters" class="filters" aria-label="Filters">
+          <div class="filters__head">
+            <h2 class="filters__title">Refine</h2>
+            <div id="clear-refinements"></div>
+          </div>
+
+          <div id="current-refinements" class="panel panel--flush"></div>
+
+          <!-- Single-select color hierarchy (connectHierarchicalMenu + swatches).
+               Disabled: see the matching block in src/search.js.
+          <section class="panel panel--color">
+            <div id="color-breadcrumb" class="color-breadcrumb"></div>
+            <div id="color-hierarchy"></div>
+          </section>
+          -->
+
+          <!-- Custom widget #2: multi-select (OR) hierarchy, lazy per-level facets -->
+          <section class="panel panel--color panel--color-multi">
+            <div id="color-disjunctive"></div>
+          </section>
+
+          <section class="panel">
+            <h3 class="panel__title">Room</h3>
+            <div id="categories"></div>
+          </section>
+
+          <section class="panel">
+            <h3 class="panel__title">Piece</h3>
+            <div id="type"></div>
+          </section>
+
+          <section class="panel">
+            <h3 class="panel__title">Material</h3>
+            <div id="material"></div>
+          </section>
+
+          <section class="panel">
+            <h3 class="panel__title">Collection</h3>
+            <div id="collection"></div>
+          </section>
+
+          <section class="panel">
+            <h3 class="panel__title">Price</h3>
+            <div id="price"></div>
+          </section>
+
+          <section class="panel">
+            <h3 class="panel__title">Rating</h3>
+            <div id="rating"></div>
+          </section>
+
+          <section class="panel panel--toggles">
+            <div id="in-stock"></div>
+            <div id="on-sale"></div>
+            <div id="is-new"></div>
+          </section>
+        </aside>
+
+        <section class="results">
+          <div class="results__bar">
+            <div id="stats" class="results__stats"></div>
+            <div class="results__controls">
+              <div id="sort-by"></div>
+              <div id="hits-per-page"></div>
+            </div>
+          </div>
+          <div id="hits"></div>
+          <div id="pagination"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Vanilla <strong>InstantSearch.js</strong> + Vite. The color facet is a custom
+          multi-select hierarchy over <code>color.lvl0 / lvl1 / lvl2</code>, with each level's
+          facet values fetched on expand — see <code>disjunctive-hierarchy.md</code>.
+        </p>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

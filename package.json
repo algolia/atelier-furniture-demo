@@ -1,0 +1,26 @@
+{
+  "name": "color-hierarchy",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Furniture demo SPA built with vanilla InstantSearch.js, featuring a custom multi-level color hierarchy widget",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate": "node scripts/generate-records.mjs",
+    "push": "node scripts/push-to-algolia.mjs",
+    "test": "node tests/widget-smoke.mjs && node tests/app-smoke.mjs && node tests/disjunctive-smoke.mjs",
+    "test:widget": "node tests/widget-smoke.mjs",
+    "test:app": "node tests/app-smoke.mjs",
+    "test:disjunctive": "node tests/disjunctive-smoke.mjs"
+  },
+  "dependencies": {
+    "algoliasearch": "^5.57.0",
+    "instantsearch.js": "^4.112.0"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "vite": "^8.2.1"
+  }
+}

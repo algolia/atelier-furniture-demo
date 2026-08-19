@@ -1,0 +1,72 @@
+{
+  "searchableAttributes": [
+    "unordered(name)",
+    "unordered(colorName)",
+    "unordered(colorShade)",
+    "unordered(colorFamily)",
+    "unordered(collection)",
+    "unordered(type)",
+    "unordered(material)",
+    "unordered(designer)",
+    "unordered(description)",
+    "sku"
+  ],
+  "attributesForFaceting": [
+    "searchable(color.lvl0)",
+    "searchable(color.lvl1)",
+    "searchable(color.lvl2)",
+    "categories.lvl0",
+    "categories.lvl1",
+    "searchable(colorFamily)",
+    "searchable(colorShade)",
+    "searchable(colorName)",
+    "searchable(type)",
+    "searchable(collection)",
+    "searchable(material)",
+    "price",
+    "rating",
+    "inStock",
+    "isNew",
+    "onSale",
+    "madeToOrder"
+  ],
+  "customRanking": ["desc(popularity)", "desc(rating)"],
+  "attributesToSnippet": ["description:28"],
+  "snippetEllipsisText": "…",
+  "attributesToHighlight": [
+    "name",
+    "fullName",
+    "colorName",
+    "colorShade",
+    "colorFamily",
+    "collection",
+    "type",
+    "material",
+    "description"
+  ],
+  "maxValuesPerFacet": 100,
+  "paginationLimitedTo": 1000,
+  "removeWordsIfNoResults": "allOptional",
+  "renderingContent": {
+    "facetOrdering": {
+      "facets": {
+        "order": ["color.lvl0", "categories.lvl0", "type", "material", "collection", "price"]
+      },
+      "values": {
+        "color.lvl0": {
+          "order": [
+            "Neutrals",
+            "Greys",
+            "Black & White",
+            "Browns",
+            "Blues",
+            "Greens",
+            "Yellows",
+            "Reds & Pinks"
+          ],
+          "sortRemainingBy": "count"
+        }
+      }
+    }
+  }
+}
